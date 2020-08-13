@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import { Link } from "react-router-dom";
 
 const useStyles = createUseStyles({
   stuckbutton: {
@@ -18,8 +19,10 @@ export const StuckButton = () => {
     console.log("Clicked");
   };
   return (
-    <div className={classes.stuckbutton} onClick={handleClick}>
-      I am Stuck
-    </div>
+    <Link to={"/questions"} style={{ textDecoration: "none" }}>
+      <div className={classes.stuckbutton} onClick={handleClick}>
+        I am Stuck
+      </div>
+    </Link>
   );
 };

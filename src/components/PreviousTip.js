@@ -1,5 +1,8 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import { cat1br, cat1tl, cat2br, cat2tl } from "../constants/colors";
+import { Link } from "react-router-dom";
+import { parseContent } from "../utils/tipParsing";
 
 const useStyles = createUseStyles({
   wrapper: {
@@ -16,13 +19,14 @@ const useStyles = createUseStyles({
     borderRadius: 48,
     padding: 10,
     minHeight: 230,
+    color: "black",
   },
 });
 
 export const PreviousTip = ({ index = 0, side = 0 }) => {
   const classes = useStyles();
-  const topLeftColor = side === 0 ? "#fe006e" : "#fe00ff";
-  const bottomRightColor = side === 0 ? "#011f80" : "#011fff";
+  const topLeftColor = side === 0 ? cat1tl : cat2tl;
+  const bottomRightColor = side === 0 ? cat1br : cat2br;
   return (
     <div
       className={classes.wrapper}
@@ -31,17 +35,20 @@ export const PreviousTip = ({ index = 0, side = 0 }) => {
         background: `repeating-linear-gradient(-35deg, ${bottomRightColor} 0%, ${topLeftColor} 100%)`,
       }}
     >
-      <div
-        className={classes.content}
-        style={{
-          paddingLeft: side === 0 ? 20 : 100,
-          paddingRight: side === 0 ? 100 : 20,
-        }}
+      <Link
+        to={"/tip/focused/221-helloworld"}
+        style={{ textDecoration: "none" }}
       >
-        Content al conetn da elk djl ape jkla lkje lahsdn. Content al conetn da
-        elk djl ape jkla lkje lahsdn. Content al conetn da elk djl ape jkla lkje
-        lahsdn.
-      </div>
+        <div
+          className={classes.content}
+          style={{
+            paddingLeft: side === 0 ? 20 : 100,
+            paddingRight: side === 0 ? 100 : 20,
+          }}
+        >
+          Tip n.221: Hello World
+        </div>
+      </Link>
     </div>
   );
 };
