@@ -36,7 +36,7 @@ export const PreviousTip = ({ index = 0, side = 0 }) => {
       }}
     >
       <Link
-        to={"/tip/focused/221-helloworld"}
+        to={"/tip/diverse/1-walk-in-nature"}
         style={{ textDecoration: "none" }}
       >
         <div
@@ -46,7 +46,8 @@ export const PreviousTip = ({ index = 0, side = 0 }) => {
             paddingRight: side === 0 ? 100 : 20,
           }}
         >
-          Tip n.221: Hello World
+          Diversification Tip #1:
+          <br /> <strong>Take a Walk in Nature</strong>
         </div>
       </Link>
     </div>

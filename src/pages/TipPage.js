@@ -21,13 +21,22 @@ const useStyles = createUseStyles({
     borderRadius: 35,
     paddingBottom: "1vh",
     paddingTop: "0.5em",
-    paddingLeft: "0.5em",
-    paddingRight: "0.5em",
+    paddingLeft: "1em",
+    paddingRight: "1em",
     minHeight: "70vh",
+    "@global img": {
+      width: "100%",
+      maxWidth: "700px",
+    },
+    "@global span": {
+      textAlign: "center",
+      width: "100%",
+      display: "inline-block",
+    },
   },
   tipTitle: {
-    fontSize: "calc(48px + 2vmin)",
-    padding: "10px 0 0 5vw",
+    fontSize: "calc(36px + 2vmin)",
+    fontFamily: "Courier Prime, monospace",
     textDecoration: "none",
     userSelect: "none",
     color: "white",
@@ -35,10 +44,19 @@ const useStyles = createUseStyles({
   tipNumber: {
     fontSize: "calc(36px + 2vmin)",
     fontFamily: "Courier Prime, monospace",
-    padding: "0 0 10px 5vw",
     textDecoration: "none",
     userSelect: "none",
     color: "white",
+  },
+  tipCategory: {
+    fontSize: "calc(12px + 2vmin)",
+    fontStyle: "italic",
+    textDecoration: "none",
+    userSelect: "none",
+    color: "white",
+  },
+  tipMeta: {
+    padding: "0 0 10px 5vw",
   },
 });
 
@@ -49,7 +67,6 @@ export const TipPage = () => {
   const [meta, setMeta] = React.useState({});
   React.useEffect(() => {
     const p = process.env.PUBLIC_URL + "/tips/" + mode + "/" + id + ".md";
-    console.log(">>>>", p);
     fetch(p)
       .catch((error) => console.log(error))
       .then((response) => {
@@ -62,8 +79,8 @@ export const TipPage = () => {
         setTipContent(content);
       });
   }, [id, mode]);
-  const topLeftColor = meta["category"] === "incubation" ? cat1tl : cat2tl;
-  const bottomRightColor = meta["category"] === "incubation" ? cat1br : cat2br;
+  const topLeftColor = mode === "focused" ? cat1tl : cat2tl;
+  const bottomRightColor = mode === "focused" ? cat1br : cat2br;
   return (
     <div
       className={classes.page}
@@ -71,10 +88,13 @@ export const TipPage = () => {
         background: `repeating-linear-gradient(-35deg, ${bottomRightColor} 0%, ${topLeftColor} 100%)`,
       }}
     >
-      <div className={classes.tipTitle}>{meta["title"]}</div>
-      <div className={classes.tipNumber}>
-        <span style={{ fontSize: "0.75em" }}>#</span>
-        {meta["number"]}
+      <div className={classes.tipMeta}>
+        <div className={classes.tipNumber}>
+          <span style={{ fontSize: "0.75em" }}>#</span>
+          {meta["number"]}
+        </div>
+        <div className={classes.tipTitle}>{meta["title"]}</div>
+        <div className={classes.tipCategory}>{meta["category"]}</div>
       </div>
       <div className={classes.tipContent}>
         <ReactMarkdown source={tipContent} escapeHtml={false} />
