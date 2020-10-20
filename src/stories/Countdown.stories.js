@@ -11,7 +11,23 @@ export default {
 const Template = (args) => {
   return (
     <div>
-      <Countdown {...args} />
+      <Countdown {...args}>
+        <div>
+          <br />
+          &nbsp;Hello
+          <br />
+        </div>
+        <div>
+          <br />
+          &nbsp;Hello
+          <br />
+        </div>
+        <div>
+          <br />
+          &nbsp;Hello
+          <br />
+        </div>
+      </Countdown>
     </div>
   );
 };

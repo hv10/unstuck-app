@@ -8,8 +8,8 @@ import { useSpring, animated } from "react-spring";
 const useStyles = createUseStyles({
   wrapper: {
     position: "relative",
-    minHeight: "95vh",
-    minWidth: "95vw",
+    height: "min(95vh, 1280px)",
+    width: "min(95vw, 720px)",
   },
   progress: {
     zIndex: -1,
@@ -26,11 +26,14 @@ const useStyles = createUseStyles({
     width: "calc(100% - 10px)",
     height: "calc(100% - 10px)",
     position: "absolute",
-    transition: "ease-in",
+    transition: "0.3s ease-in",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
 });
 
-export const Countdown = ({ progress = 0, thickness = 0.05 }, props) => {
+export const Countdown = ({ progress = 0, thickness = 0.05, children }) => {
   const [dimensions, setDimensions] = React.useState({ width: -1, height: -1 });
   const classes = useStyles();
   const toMiddle = (x, y, p) => {
@@ -100,7 +103,7 @@ export const Countdown = ({ progress = 0, thickness = 0.05 }, props) => {
               <path d={getClipPath(progress)} fillRule={"evenodd"} />
             </clipPath>
           </svg>
-          <div className={classes.holder}>{props.children}</div>
+          <div className={classes.holder}>{children}</div>
         </div>
       )}
     </Measure>
