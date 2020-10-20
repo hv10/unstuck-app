@@ -19,4 +19,5 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   progress: 0.5,
+  thickness: 0.05,
 };
