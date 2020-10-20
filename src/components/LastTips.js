@@ -25,7 +25,7 @@ export const LastTips = () => {
   return (
     <div className={classes.tippsSection}>
       <h1 className={classes.title}>Last.Tipps</h1>
-      {[...Array(4)].map((v, i) => (
+      {[...Array(2)].map((v, i) => (
         <PreviousTip key={i} side={i % 2} />
       ))}
     </div>

@@ -3,6 +3,7 @@ import { createUseStyles } from "react-jss";
 import { cat1br, cat1tl, cat2br, cat2tl } from "../constants/colors";
 import { Link } from "react-router-dom";
 import { parseContent } from "../utils/tipParsing";
+import tipsCollection from "../constants/tipsCollection.json";
 
 const useStyles = createUseStyles({
   wrapper: {
@@ -12,13 +13,13 @@ const useStyles = createUseStyles({
     borderRadius: 50,
     width: "100vmin",
     marginBottom: "5vmin",
-    minHeight: 240,
+    minHeight: 120,
   },
   content: {
     background: "white",
     borderRadius: 48,
     padding: 10,
-    minHeight: 230,
+    minHeight: 110,
     color: "black",
   },
 });
@@ -46,8 +47,17 @@ export const PreviousTip = ({ index = 0, side = 0 }) => {
             paddingRight: side === 0 ? 100 : 20,
           }}
         >
-          Diversification Tip #1:
-          <br /> <strong>Take a Walk in Nature</strong>
+          {side == 0 ? (
+            <>
+              <p>Divergent Thinking #1</p>
+              <h2>Take a Walk in Nature</h2>
+            </>
+          ) : (
+            <>
+              <p>Divergent Thinking #21</p>
+              <h2>Creative Writing</h2>
+            </>
+          )}
         </div>
       </Link>
     </div>

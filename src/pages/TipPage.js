@@ -16,7 +16,7 @@ const useStyles = createUseStyles({
   tipContent: {
     marginLeft: "auto",
     marginRight: "auto",
-    width: "90vw",
+    width: "min(800px, 90vw)",
     backgroundColor: "white",
     borderRadius: 35,
     paddingBottom: "1vh",

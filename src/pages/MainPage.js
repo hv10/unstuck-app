@@ -4,6 +4,7 @@ import { StuckButton } from "../components/StuckButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { LastTips } from "../components/LastTips";
+import { Link } from "react-router-dom";
 
 const useStyles = createUseStyles({
   page: {
@@ -40,7 +41,9 @@ export const MainPage = () => {
   return (
     <div className={classes.page}>
       <div className={classes.buttonAligner}>
-        <StuckButton />
+        <Link to={"/questions"} style={{ textDecoration: "none" }}>
+          <StuckButton />
+        </Link>
         <div className={classes.downwards}>
           <FontAwesomeIcon icon={faChevronDown} />
         </div>

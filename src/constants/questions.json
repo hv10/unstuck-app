@@ -1,0 +1,18 @@
+[
+  {"question": "Do you feel like you can concentrate?",
+    "A": {"text": "Yes",
+      "mod": [1,0]
+    },
+    "B": {"text": "Not really...",
+      "mod": [0,0]
+    }
+  },
+  {"question": "Do you feel like you can concentrate? 2",
+    "A": {"text": "Yes",
+      "mod": [1,0]
+    },
+    "B": {"text": "Not really...",
+      "mod": [0,0]
+    }
+  }
+]

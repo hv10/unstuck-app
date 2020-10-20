@@ -12,6 +12,7 @@ const useStyles = createUseStyles({
     textTransform: "uppercase",
     userSelect: "none",
     color: "white",
+    textAlign: "center",
   },
 });
 
@@ -21,10 +22,9 @@ export const StuckButton = () => {
     console.log("Clicked");
   };
   return (
-    <Link to={"/questions"} style={{ textDecoration: "none" }}>
-      <div className={classes.stuckbutton} onClick={handleClick}>
-        I am Stuck
-      </div>
-    </Link>
+    <div className={classes.stuckbutton} onClick={handleClick}>
+      I am <br />
+      Stuck
+    </div>
   );
 };

@@ -10,9 +10,12 @@ import rootReducer from "./reducers";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 import { persistStore, persistReducer } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
+import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 
 const persistConfig = {
   key: "root",
+  stateReconciler: autoMergeLevel2,
+  whitelist: ["lasttips"],
   storage,
 };
 
