@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/unstuck-app/static/css/main.a11b56fa.chunk.css",
-    "main.js": "/unstuck-app/static/js/main.a9b2fd7c.chunk.js",
-    "main.js.map": "/unstuck-app/static/js/main.a9b2fd7c.chunk.js.map",
+    "main.js": "/unstuck-app/static/js/main.c3157094.chunk.js",
+    "main.js.map": "/unstuck-app/static/js/main.c3157094.chunk.js.map",
     "runtime-main.js": "/unstuck-app/static/js/runtime-main.8cc3b7da.js",
     "runtime-main.js.map": "/unstuck-app/static/js/runtime-main.8cc3b7da.js.map",
     "static/js/2.af26955e.chunk.js": "/unstuck-app/static/js/2.af26955e.chunk.js",
     "static/js/2.af26955e.chunk.js.map": "/unstuck-app/static/js/2.af26955e.chunk.js.map",
     "index.html": "/unstuck-app/index.html",
-    "precache-manifest.7f35709f85cc0f7d6970e396138eb981.js": "/unstuck-app/precache-manifest.7f35709f85cc0f7d6970e396138eb981.js",
+    "precache-manifest.bf4c7ca96c34d3a1b915faac325c72ef.js": "/unstuck-app/precache-manifest.bf4c7ca96c34d3a1b915faac325c72ef.js",
     "service-worker.js": "/unstuck-app/service-worker.js",
     "static/css/main.a11b56fa.chunk.css.map": "/unstuck-app/static/css/main.a11b56fa.chunk.css.map",
     "static/js/2.af26955e.chunk.js.LICENSE.txt": "/unstuck-app/static/js/2.af26955e.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.8cc3b7da.js",
     "static/js/2.af26955e.chunk.js",
     "static/css/main.a11b56fa.chunk.css",
-    "static/js/main.a9b2fd7c.chunk.js"
+    "static/js/main.c3157094.chunk.js"
   ]
 }
