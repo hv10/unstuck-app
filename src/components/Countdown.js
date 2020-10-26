@@ -8,11 +8,10 @@ import { useSpring, animated } from "react-spring";
 const useStyles = createUseStyles({
   wrapper: {
     position: "relative",
-    height: "min(95vh, 1280px)",
-    width: "min(95vw, 720px)",
+    width: "100%",
+    height: "100%",
   },
   progress: {
-    zIndex: -1,
     position: "absolute",
     width: "100%",
     height: "100%",
@@ -27,9 +26,6 @@ const useStyles = createUseStyles({
     height: "calc(100% - 10px)",
     position: "absolute",
     transition: "0.3s ease-in",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
   },
 });
 
@@ -94,7 +90,6 @@ export const Countdown = ({ progress = 0, thickness = 0.05, children }) => {
       {({ measureRef }) => (
         <div className={classes.wrapper}>
           <animated.div
-            ref={measureRef}
             className={classes.progress}
             style={{ clipPath: getClipPath(progress) }}
           />
@@ -103,7 +98,9 @@ export const Countdown = ({ progress = 0, thickness = 0.05, children }) => {
               <path d={getClipPath(progress)} fillRule={"evenodd"} />
             </clipPath>
           </svg>
-          <div className={classes.holder}>{children}</div>
+          <div className={classes.holder} ref={measureRef}>
+            {children}
+          </div>
         </div>
       )}
     </Measure>

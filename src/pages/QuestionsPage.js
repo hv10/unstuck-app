@@ -3,87 +3,58 @@ import { createUseStyles } from "react-jss";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { cat1tl, cat1br, cat2tl, cat2br } from "../constants/colors";
-import Questions from "../constants/questions.json";
+import Words from "../constants/words.json";
+import { WordSelector } from "../components/WordSelector";
+import { Countdown } from "../components/Countdown";
 
 const useStyles = createUseStyles({
   page: {
     position: "relative",
+    width: "100vw",
     background:
       "repeating-linear-gradient(-35deg, rgba(254, 0, 110, 1) 10vh, rgba(1, 31, 128, 1) 80vh, rgba(1, 31, 128, 1) 120vh, rgba(254, 0, 110, 1) 190vh)",
-    fontSize: "calc(10px + 2vmin)",
-    minHeight: "100vh",
-    paddingBottom: 1,
-    overflowY: "scroll",
-    padding: "0 0 10px 5vw",
+    height: "100vh",
   },
-  question: {
-    fontSize: "calc(48px + 2vmin)",
+  holder: {
+    position: "relative",
+    padding: "5vmin",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  task: {
+    fontSize: "2rem",
     textDecoration: "none",
     userSelect: "none",
     color: "white",
-    marginBottom: "15vh",
-    marginTop: "10vh",
-  },
-  centered: {
-    maxWidth: "min(700px, 90vw)",
-    position: "absolute",
-    left: "min(350px,5vw)",
-    top: 0,
-  },
-  answers: {
-    fontSize: "calc(36px + 2vmin)",
-    textDecoration: "none",
-    userSelect: "none",
-    color: "white",
-    fontFamily: "Courier Prime, monospace",
-  },
-  answer: {
-    padding: "0.5em 0.5em",
-    marginRight: "5vw",
-    borderRadius: 10,
-    transition: "background 1500ms",
-    "&:active": {
-      background: "rgba(255,255,255,0.3)",
-      transition: "100ms",
-    },
+    marginBottom: "12vh",
+    paddingTop: "10vh",
+    textTransform: "capitalize",
   },
 });
 
 export const QuestionsPage = () => {
   const classes = useStyles();
-  const [question, setQuestion] = React.useState({
-    question: "",
-    A: {},
-    B: {},
-  });
-  const selectNextQuestion = () => {
-    return Questions[Math.floor(Math.random() * Questions.length)];
-  };
-  React.useLayoutEffect(() => {
-    setQuestion(selectNextQuestion());
-  }, []);
-  const handleAnswer = (answer) => {
-    setQuestion(selectNextQuestion());
+  const [words, setWords] = React.useState(Words);
+  const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * i);
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
   };
   return (
     <div className={classes.page}>
-      <div className={classes.centered}>
-        <div className={classes.question}>{question.question}</div>
-        <div className={classes.answers}>
-          <div
-            onClick={() => handleAnswer(question.A)}
-            className={classes.answer}
-          >
-            {question.A.text}
-          </div>
-          <div
-            onClick={() => handleAnswer(question.B)}
-            className={classes.answer}
-          >
-            {question.B.text}
-          </div>
+      <Countdown progress={0.9} thickness={0.05}>
+        <div className={classes.holder}>
+          <div className={classes.task}>Select words fitting your task:</div>
+          <WordSelector
+            focusWords={words.focusWords}
+            diverseWords={words.diverseWords}
+          />
         </div>
-      </div>
+      </Countdown>
     </div>
   );
 };

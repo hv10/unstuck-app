@@ -1,10 +1,10 @@
 import React from "react";
-import "../index.css";
+import "../../index.css";
 
-import { WordSelector } from "../components/WordSelector";
+import { WordSelector } from "../../components/WordSelector";
 
 export default {
-  title: "UnstuckComponents/WordSelector",
+  title: "Components/WordSelector",
   component: WordSelector,
 };
 

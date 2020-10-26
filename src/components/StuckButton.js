@@ -3,8 +3,8 @@ import { createUseStyles } from "react-jss";
 import { Link } from "react-router-dom";
 
 const useStyles = createUseStyles({
-  stuckbutton: {
-    fontSize: "calc(96px + 2vmin)",
+  stuckButton: {
+    fontSize: "min(8rem, 20vmin)",
     fontFamily: "Courier Prime, monospace",
     fontStyle: "italic",
     padding: "10px 20px",
@@ -22,7 +22,7 @@ export const StuckButton = () => {
     console.log("Clicked");
   };
   return (
-    <div className={classes.stuckbutton} onClick={handleClick}>
+    <div className={classes.stuckButton} onClick={handleClick}>
       I am <br />
       Stuck
     </div>

@@ -1,32 +1,32 @@
 import React from "react";
-import "../index.css";
+import "../../index.css";
 
-import { Countdown } from "../components/Countdown";
+import { Countdown } from "../../components/Countdown";
 
 export default {
-  title: "UnstuckComponents/Countdown",
+  title: "Components/Countdown",
   component: Countdown,
 };
 
 const Template = (args) => {
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <Countdown {...args}>
-        <div>
+        <p>
           <br />
           &nbsp;Hello
           <br />
-        </div>
-        <div>
+        </p>
+        <p>
           <br />
           &nbsp;Hello
           <br />
-        </div>
-        <div>
+        </p>
+        <p>
           <br />
           &nbsp;Hello
           <br />
-        </div>
+        </p>
       </Countdown>
     </div>
   );
