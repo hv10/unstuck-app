@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b9d2d38fa652e9b419b3f54b9146e3d0",
+    "revision": "c6df6c5359747884b06a4780a6e610c7",
     "url": "/unstuck-app/index.html"
   },
   {
-    "revision": "ae93a09ea93f305e445e",
+    "revision": "7d14735dd80cce780d5a",
     "url": "/unstuck-app/static/css/main.a11b56fa.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/unstuck-app/static/js/2.af26955e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ae93a09ea93f305e445e",
-    "url": "/unstuck-app/static/js/main.c3157094.chunk.js"
+    "revision": "7d14735dd80cce780d5a",
+    "url": "/unstuck-app/static/js/main.f1f85889.chunk.js"
   },
   {
     "revision": "b5398c621e2f98f2cc22",

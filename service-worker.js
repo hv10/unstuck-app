@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/unstuck-app/precache-manifest.bf4c7ca96c34d3a1b915faac325c72ef.js"
+  "/unstuck-app/precache-manifest.9a489a927a604270057deba285729956.js"
 );
 
 self.addEventListener('message', (event) => {
