@@ -10,6 +10,7 @@ const useStyles = createUseStyles({
     padding: "0.1em 0.5em",
     boxSizing: "border-box",
     border: "0.1em solid transparent",
+    borderRadius: "0.1em",
     transition: "0.2s ease-in-out",
     "&:hover": {
       backgroundColor: "rgba(200,200,200,0.2)",

@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
   page: {
     background:
       "repeating-linear-gradient(-35deg, rgba(254, 0, 110, 1) 10vh, rgba(1, 31, 128, 1) 80vh, rgba(1, 31, 128, 1) 120vh, rgba(254, 0, 110, 1) 190vh)",
-    fontSize: "calc(10px + 2vmin)",
+    fontSize: "1rem",
     minHeight: "100vh",
     paddingBottom: 1,
   },
@@ -35,21 +35,21 @@ const useStyles = createUseStyles({
     },
   },
   tipTitle: {
-    fontSize: "calc(36px + 2vmin)",
+    fontSize: "2rem",
     fontFamily: "Courier Prime, monospace",
     textDecoration: "none",
     userSelect: "none",
     color: "white",
   },
   tipNumber: {
-    fontSize: "calc(36px + 2vmin)",
+    fontSize: "2rem",
     fontFamily: "Courier Prime, monospace",
     textDecoration: "none",
     userSelect: "none",
     color: "white",
   },
   tipCategory: {
-    fontSize: "calc(12px + 2vmin)",
+    fontSize: "1rem",
     fontStyle: "italic",
     textDecoration: "none",
     userSelect: "none",
